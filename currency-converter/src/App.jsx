@@ -15,7 +15,7 @@ import Footer from "./components/Footer";
 
 
 
-const API_KEY = '7e24ab5222ddba3b342b6695';  
+const API_KEY = '573dd568cdff91d16f73d106';  
 
 
 const App = () => {

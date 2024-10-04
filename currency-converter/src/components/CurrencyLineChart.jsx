@@ -9,7 +9,7 @@ const CurrencyLineChart = () => {
   useEffect(() => {
     const fetchExchangeRates = async () => {
       try {
-        const response = await axios.get('https://v6.exchangerate-api.com/v6/7e24ab5222ddba3b342b6695/latest/USD');
+        const response = await axios.get('https://v6.exchangerate-api.com/v6/573dd568cdff91d16f73d106/latest/USD');
         const rates = response.data.conversion_rates;
         const formattedData = Object.keys(rates).map((currency) => ({
           name: currency,
