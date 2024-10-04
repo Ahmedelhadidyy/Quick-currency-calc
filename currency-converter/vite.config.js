@@ -9,4 +9,7 @@ export default defineConfig({
       external: ['recharts'],
     },
   },
+  optimizeDeps: {
+    include: ['recharts'],
+  },
 })
