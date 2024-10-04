@@ -4,7 +4,7 @@ import CurrencySelector from "./components/CurrencySelector";
 import AmountInput from './components/AmountInput';
 import ConversionResult from './components/ConversionResult';
 import useDarkMode from './components/useDarkMode';
-import CurrencyLineChart from "./components/CurrencyLineChart";
+// import CurrencyLineChart from "./components/CurrencyLineChart";
 import LiveExchangeRates from "./components/LiveExchangeRates";
 import AboutUs from "./components/AboutUs";
 import FAQ from "./components/FAQ";
@@ -108,7 +108,7 @@ const App = () => {
       <div className="flex items-center justify-center flex-col mt-20">
          <h1 className="text-[1.1rem] sm:text-3xl font-bold">Currency Exchange Rates</h1>
          <div className="my-40 w-[80%] items-center justify-center">
-           <CurrencyLineChart />
+           {/* <CurrencyLineChart /> */}
          </div>
          <LiveExchangeRates />
       </div>

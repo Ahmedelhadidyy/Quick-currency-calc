@@ -11,5 +11,10 @@ export default defineConfig({
     rollupOptions: {
       external: ['recharts'],
     },
-  }
+  },
+  resolve: {
+    alias: {
+        '@': '/src',
+    },
+},
 })
