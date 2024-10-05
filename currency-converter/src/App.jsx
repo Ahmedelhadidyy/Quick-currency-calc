@@ -7,6 +7,7 @@ import useDarkMode from './components/useDarkMode';
 import LiveExchangeRates from "./components/LiveExchangeRates";
 import AboutUs from "./components/AboutUs";
 import FAQ from "./components/FAQ";
+import CurrencyLineChart from "./components/CurrencyLineChart";
 import Features from "./components/Features";
 import Header from "./components/Header";
 import ScrollToTop from "./components/ScrollToTop";
@@ -108,6 +109,7 @@ const App = () => {
          <h1 className="text-[1.1rem] sm:text-3xl font-bold">Currency Exchange Rates</h1>
          <div className="my-40 w-[80%] items-center justify-center">
           
+           <CurrencyLineChart />
          </div>
          <LiveExchangeRates />
       </div>
