@@ -37,7 +37,7 @@ const CurrencyLineChart = () => {
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />
-          <Tooltip />
+          <Tooltip labelStyle={{ color: '#05776b' }} itemStyle={{ color: '#13b489' }} />
           <Line type="monotone" dataKey="value" stroke="#13b489" strokeWidth={2} />
         </LineChart>
       </ResponsiveContainer>
