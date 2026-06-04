@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+    --tur1: #13b489;
+    --tur2: #13cca2;
+    --tur3: #9ce4dc;
+    --tur4: #05776b;
+    --void1: #08192a;
+    --void2: #6c7c94;
+    --void3: #bcc6c5;
+    --void4: #2a4951;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+h1{
+    color: #13b489;
+}
+
+
+
+
+:root {
+    --primary-font: 'Poppins', sans-serif;
+  }
+  
+  body {
+    font-family: var(--primary-font);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--primary-font);
+    font-weight: 600; /* Bold for headings */
+  }
+  
+  p {
+    font-family: var(--primary-font);
+    font-weight: 400; /* Regular for paragraphs */
+  }
+  
+.dark h1 {
+    color: #05776b;
+}

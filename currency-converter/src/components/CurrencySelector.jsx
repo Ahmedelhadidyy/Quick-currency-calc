@@ -1,29 +1,58 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const CurrencySelector = ({ label, currencies, selectedCurrency, onSelectCurrency }) => {
+const CurrencySelector = ({
+  label,
+  currencies,
+  selectedCurrency,
+  onSelectCurrency,
+}) => {
   const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredCurrencies = currencies.filter(currency =>
+  const filteredCurrencies = currencies.filter((currency) =>
     currency.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const handleSelectCurrency = (currency) => {
+    onSelectCurrency(currency);
+    setSearchQuery(currency);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+
+      if (filteredCurrencies.length > 0) {
+        handleSelectCurrency(filteredCurrencies[0]);
+      }
+    }
+  };
+
   return (
     <div className="mb-4">
-      <label className="block text-[.9rem] sm:text-lg mb-2">{label}</label>
+      <label className="block text-[.9rem] sm:text-lg mb-2">
+        {label}
+      </label>
+
       <input
         type="text"
         placeholder="Search currency..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
+        onKeyDown={handleKeyDown}
         className="border dark:bg-[--void4] text-[.9rem] sm:text-lg p-2 rounded w-full mb-2"
       />
+
       <ul className="list-none max-h-32 overflow-y-auto border rounded">
-        {filteredCurrencies.map(currency => (
+        {filteredCurrencies.map((currency) => (
           <li
             key={currency}
-            onClick={() => onSelectCurrency(currency)}
-            className={`cursor-pointer p-2 hover:bg-gray-300 text-[.8rem] sm:text-lg dark:hover:bg-gray-900 rounded ${selectedCurrency === currency ? 'bg-[--tur1] dark:bg-[--tur4]' : ''}`}
+            onClick={() => handleSelectCurrency(currency)}
+            className={`cursor-pointer p-2 hover:bg-gray-300 text-[.8rem] sm:text-lg dark:hover:bg-gray-900 rounded ${
+              selectedCurrency === currency
+                ? 'bg-[--tur1] dark:bg-[--tur4]'
+                : ''
+            }`}
           >
             {currency}
           </li>
@@ -41,4 +70,3 @@ CurrencySelector.propTypes = {
 };
 
 export default CurrencySelector;
-
